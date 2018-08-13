@@ -87,7 +87,7 @@ Please read [this paper][svdpp] for more explanation on SVD++.
 1. To make addition of new cf models (e.g. BiasSVD, SVD++) easier, I refactored decomposition policies. The mofications are: 1) all model parameters are moved from `class CFType<>` to `class DecompositionPolicy`. 2) `DecompositionPolicy` has to implement method `GetRating()` to compute rating for given user and item. 3) `DecompositionPolicy` has to implement method `GetNeighborhood` to compute neighborhoods for given users. (This modification is in PR [#1458][1458]).
 2. `class CFModel` is implemented to be used for cf main program. When `mlpack_cf` is executed from command line, `CFModel` is serialized instead of `class CFType<>`. `class CFModel` is needed for the main program because CFType is a class template. (This modification is in PR [#1397][1397]).
 
-
+So far the PRs ([#1397][1397], [#1410][1410]) for data normalization, neighbor search, and weight interpolation have been merged. The PR ([#1458][1458]) for BiasSVD and SVD++ is pretty long and is still under reviewing and debugging, but it will also be merged soon.
 
 # To Do
 
